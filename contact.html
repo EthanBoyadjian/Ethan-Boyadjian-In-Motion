@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio - Contact</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Ethan Boyadjian in Motion</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Presentation</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="work-experience.html">Work Experience</a></li>
+          <li><a href="extracurricular.html">Extracurricular Activities</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <!-- New tab for CV -->
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="contact">
+        <h2>Contact</h2>
+        <form id="contact-form" onsubmit="sendEmail(event)">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Ethan Boyadjian in Motion</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+      function sendEmail(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        const mailtoLink = `mailto:your-email@example.com?subject=Contact%20Form%20Submission&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0AMessage:%20${encodeURIComponent(message)}`;
+
+        window.location.href = mailtoLink;
+      }
+    </script>
+    <script src="scripts.js"></script>
+  </body>
+</html>

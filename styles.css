@@ -1,0 +1,333 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("images/background image.jpg");
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Makes the background image fixed */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white; /* Initial text color */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Styles for the active navigation link */
+nav ul li a.active {
+  font-weight: bold;
+  color: yellow; /* Change this to your preferred color */
+  text-decoration: underline;
+}
+
+nav ul li a:hover {
+  color: yellow; /* Text color on hover */
+}
+
+nav .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: yellow; /* Underline color */
+  transition:
+    left 0.3s ease-in-out,
+    width 0.3s ease-in-out;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent background for readability */
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+footer {
+  background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  /* Ensure footer sticks to the bottom if content is short */
+  flex-shrink: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 1rem;
+}
+
+form input,
+form textarea {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+form button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+/* Modern Vertical Timeline styles */
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Semi-transparent background for readability */
+  border-radius: 8px;
+}
+
+.timeline-item {
+  position: relative;
+  margin: 1rem 0;
+  padding-left: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #ffd700; /* Change this to your preferred color */
+}
+
+.timeline-content {
+  padding: 1rem;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent background for readability */
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.timeline-content:hover {
+  transform: scale(1.05);
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.timeline-content p {
+  margin: 0.5rem 0 0;
+  color: #666;
+}
+
+/* Popup window styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  max-height: 80%; /* Set a maximum height for the popup */
+  background-color: rgba(0, 0, 0, 0.9); /* Less transparent */
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 1000;
+  text-align: center;
+  overflow-y: auto; /* Make the popup scrollable */
+}
+
+.popup-content {
+  position: relative;
+}
+
+.popup-content img {
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup-content .date {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.popup-content .courses {
+  margin-top: 1rem;
+}
+
+.popup-content ul {
+  text-align: left; /* Ensure the text is left-aligned */
+  padding-left: 20px; /* Add some padding to the left for better alignment */
+}
+
+.popup-content li {
+  text-align: left; /* Ensure each list item is left-aligned */
+}
+
+.cv-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.cv-links a {
+  margin: 1rem 0;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+cv-links a:hover {
+  background-color: #555;
+}
+
+/* Add this to your existing CSS file */
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center the navigation tabs */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+  text-decoration: none;
+  color: white; /* Initial text color */
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: yellow; /* Text color on hover or active */
+}
+
+nav .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: yellow; /* Underline color */
+  transition:
+    left 0.3s ease-in-out,
+    width 0.3s ease-in-out;
+}
+
+form button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem; /* Adjusted padding to make the button less wide */
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem; /* Adjusted font size to make the button smaller */
+  max-width: 150px; /* Set a maximum width to make the button less wide */
+  width: 100%; /* Ensure the button width is responsive */
+  text-align: center; /* Center the text inside the button */
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+#presentation {
+  display: flex;
+  align-items: flex-start;
+}
+
+.presentation-photo {
+  margin-left: 1rem; /* Adjust margins as needed */
+  max-width: 900px; /* Adjust the width to make the image three times bigger */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+#presentation p {
+  flex: 1;
+  margin-right: 1rem; /* Add some margin to the right of the text */
+}

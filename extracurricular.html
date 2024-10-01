@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio - Extracurricular Activities</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Ethan Boyadjian in Motion</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Presentation</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="work-experience.html">Work Experience</a></li>
+          <li>
+            <a href="extracurricular.html" class="active"
+              >Extracurricular Activities</a
+            >
+          </li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="extracurricular">
+        <h2>Extracurricular Activities</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div
+              class="timeline-content"
+              data-title="Basketball, Player - Referee - Coach"
+              data-date="2013 - Present"
+              data-description="As a basketball player for over 10 years, I became the captain of the ECN team, and an official referee for the French Basketball Federation (FFBB). Additionally, I have experience as a coach for U9 teams."
+              data-image="images/photo_basket.JPG"
+              data-logo="images/logo_ffbb.jpg"
+              data-courses=""
+            >
+              <h3>2013 - Present</h3>
+              <p>Basketball, Player - Referee - Coach</p>
+              <p>France</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div
+              class="timeline-content"
+              data-title="UNASS 44, Volunteer First-Aid"
+              data-date="2022 - Present"
+              data-description="Dedicated first-aider and volunteer with UNASS 44, equipped with comprehensive first-aid training and hands-on experience in emergency medical response. Provided critical first-aid support at high-profile events such as FC Nantes matches, the Rugby World Cup 2023, and large-scale concerts, ensuring the safety and well-being of participants and spectators."
+              data-image="images/secourisme.jpg"
+              data-logo="images/logo_unass44.jpg"
+              data-courses=""
+            >
+              <h3>2022 - Present</h3>
+              <p>UNASS 44, Volunteer First-Aid</p>
+              <p>Nantes, France</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div
+              class="timeline-content"
+              data-title="CBN, DJ"
+              data-date="2022 - 2024"
+              data-description="Performed as a DJ at CBN events, creating dynamic sets and enhancing the atmosphere at various social gatherings of Ecole Centrale de Nantes."
+              data-image="images/cbn.jpg"
+              data-logo="images/logo_cbn.png"
+              data-courses=""
+            >
+              <h3>2022 - 2024</h3>
+              <p>CBN, DJ</p>
+              <p>Nantes, France</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Ethan Boyadjian in Motion</p>
+    </footer>
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <img
+          src=""
+          alt="Logo"
+          class="popup-logo"
+          style="width: 25%; height: auto"
+        />
+        <h2></h2>
+        <p class="date"></p>
+        <p class="description"></p>
+        <img
+          src=""
+          alt="Image description"
+          class="popup-image"
+          style="width: 100%; height: auto"
+        />
+        <p class="courses"></p>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

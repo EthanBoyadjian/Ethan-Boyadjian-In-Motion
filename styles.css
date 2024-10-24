@@ -120,12 +120,7 @@ form button:hover {
   max-width: 600px;
   margin: 0 auto;
   padding: 1rem;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.9
-  ); /* Semi-transparent background for readability */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for readability */
   border-radius: 8px;
 }
 
@@ -151,12 +146,7 @@ form button:hover {
 
 .timeline-content {
   padding: 1rem;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Semi-transparent background for readability */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
   border-radius: 4px;
   transition: transform 0.3s ease;
   position: relative;
@@ -250,7 +240,7 @@ form button:hover {
   transition: background-color 0.3s ease;
 }
 
-cv-links a:hover {
+.cv-links a:hover {
   background-color: #555;
 }
 
@@ -322,7 +312,7 @@ form button:hover {
 
 .presentation-photo {
   margin-left: 1rem; /* Adjust margins as needed */
-  max-width: 900px; /* Adjust the width to make the image three times bigger */
+  max-width: 800px; /* Adjust the width to make the image three times bigger */
   height: auto; /* Maintain aspect ratio */
   border-radius: 8px; /* Optional: Add rounded corners */
 }

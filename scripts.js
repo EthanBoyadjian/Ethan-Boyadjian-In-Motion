@@ -5,9 +5,22 @@ function sendEmail(event) {
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
 
-  const mailtoLink = `mailto:boyadjian.ethan@gmail.com?subject=Contact%20Form%20Submission&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0AMessage:%20${encodeURIComponent(message)}`;
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "send_email.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-  window.location = mailtoLink;
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        alert("Message sent successfully!");
+      } else {
+        alert("Failed to send message.");
+      }
+    }
+  };
+
+  const params = `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&message=${encodeURIComponent(message)}`;
+  xhr.send(params);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -44,6 +57,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial update
   updateUnderline();
+
+  // Attach the sendEmail function to the form submit event
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", sendEmail);
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -103,4 +122,46 @@ document.addEventListener("DOMContentLoaded", () => {
       popup.style.display = "none";
     }
   });
+});
+
+const translations = {
+  en: {
+    siteTitle: "My Website",
+    navHome: "Home",
+    navEducation: "Education",
+    navWork: "Work Experience",
+    navExtracurricular: "Extracurricular Activities",
+    navCv: "CV",
+    navContact: "Contact",
+    sectionTitle: "Education",
+    sectionDescription: "(Click on section to learn more)"
+  },
+  fr: {
+    siteTitle: "Mon Site Web",
+    navHome: "Accueil",
+    navEducation: "Éducation",
+    navWork: "Expérience Professionnelle",
+    navExtracurricular: "Activités Extracurriculaires",
+    navCv: "CV",
+    navContact: "Contact",
+    sectionTitle: "Éducation",
+    sectionDescription: "(Cliquez sur la section pour en savoir plus)"
+  }
+};
+
+function switchLanguage(lang) {
+  document.getElementById("site-title").textContent = translations[lang].siteTitle;
+  document.getElementById("nav-home").textContent = translations[lang].navHome;
+  document.getElementById("nav-education").textContent = translations[lang].navEducation;
+  document.getElementById("nav-work").textContent = translations[lang].navWork;
+  document.getElementById("nav-extracurricular").textContent = translations[lang].navExtracurricular;
+  document.getElementById("nav-cv").textContent = translations[lang].navCv;
+  document.getElementById("nav-contact").textContent = translations[lang].navContact;
+  document.getElementById("section-title").textContent = translations[lang].sectionTitle;
+  document.getElementById("section-description").textContent = translations[lang].sectionDescription;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Set default language to English
+  switchLanguage('en');
 });

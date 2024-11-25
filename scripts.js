@@ -126,8 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const translations = {
   en: {
-    siteTitle: "My Website",
-    navHome: "Home",
+    siteTitle: "Ethan Boyadjian in Motion",
+    navHome: "Presentation",
     navEducation: "Education",
     navWork: "Work Experience",
     navExtracurricular: "Extracurricular Activities",
@@ -137,8 +137,8 @@ const translations = {
     sectionDescription: "(Click on section to learn more)"
   },
   fr: {
-    siteTitle: "Mon Site Web",
-    navHome: "Accueil",
+    siteTitle: "Ethan Boyadjian en Mouvement",
+    navHome: "Présentation",
     navEducation: "Éducation",
     navWork: "Expérience Professionnelle",
     navExtracurricular: "Activités Extracurriculaires",
@@ -160,6 +160,18 @@ function switchLanguage(lang) {
   document.getElementById("section-title").textContent = translations[lang].sectionTitle;
   document.getElementById("section-description").textContent = translations[lang].sectionDescription;
 }
+
+document.getElementById("language-button").addEventListener("click", function() {
+  const menu = document.getElementById("language-menu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+});
+
+document.addEventListener("click", function(event) {
+  const menu = document.getElementById("language-menu");
+  if (!event.target.closest(".language-switcher")) {
+    menu.style.display = "none";
+  }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   // Set default language to English
